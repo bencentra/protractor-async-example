@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>lol</title>
+  </head>
+  <body>
+    <h1>Hello, Deferred!</h1>
+    <!-- Yes, the very old jQuery was important to this test. Feel free to upgrade this! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      window.App = {};
+      window.App.ready = $.Deferred();
+      setTimeout(function() {
+        console.log('resolving...');
+        window.App.ready.resolve(true);
+      }, 5000);
+    </script>
+  </body>
+</html>
